@@ -1,0 +1,122 @@
+//how many places we can access the classlevel and method level variables.
+//class level should be acesses in there places. 1) Inclass 2) In method 3) In anynomuous window.
+//method level should be acessed ONLY in method leve.
+
+// example for class level.
+public class myj5fourthclass {
+    public account acc = new account(name='manihigh2',site='chinthapalii',industry ='software developer');
+    public  student__C std;
+    
+    public myj5fourthclass(){
+        
+        system.debug('before acc'+ acc);
+        acc.name='raju1';
+        system.debug('after acc'+ acc);
+        std = new student__C();
+        std.name = 'manikanta';
+        std.course__C = 'a022x000006duxP';
+        system.debug('student details'+ std);
+    }
+}
+        //example for method level.
+        
+        public class myj5fourthclass {
+         public account acc = new account(name='manihigh2',site='chinthapalii',industry ='software developer');
+       
+    
+    public myj5fourthclass(){
+        student__C std;
+        system.debug('before acc'+ acc);
+        acc.name='raju1';
+        system.debug('after acc'+ acc);
+        std = new student__C();
+        std.name = 'manikanta';
+        std.course__C = 'a022x000006duxP';
+        system.debug('student details'+ std);
+        
+    }
+
+}
+
+PART 2
+
+//arguement constructer for primitive data type.
+   
+    public class myj5sixclass {
+    public string str = 'majnu';
+     
+    public myj5sixclass(integer ino, string stro){
+             system.debug('after in window'+ ino);
+        system.debug('after in windoe'+ stro);
+    }
+
+}
+
+// in window give this code;
+          
+       1st way:  string st='miller';
+                 integer intx =25;
+                 myj5sixclass de = new myj5sixclass(intx,st);
+                        OR
+      2nd way:   myj5sixclass de = new myj5sixclass(25,'miller');
+
+
+
+//arguement constructer for non-primitive data type.
+   public class myj5sixclass {
+    public string str = 'majnu';
+     
+    public myj5sixclass(account acc,student__c std){
+             system.debug('after in window'+ acc);
+             system.debug('after in window'+ std);
+    }
+
+}
+
+//in window give below code:
+
+//1st way
+account acc = new account();
+acc.name = 'meena';
+acc.site = 'australia';
+
+student__c std = new student__c();
+std.name = 'mirchi';
+std.course__C = 'a022x000006duxK';
+ 
+myj5sixclass de = new myj5sixclass(acc,std);
+
+//2nd way
+myj5sixclass de = new myj5sixclass(new account(name ='varshini',site='hyderabad'),new student__C(name='rashmi'));
+ 
+PART 3
+
+//which constructer will be claaed?
+//A)based on give criteria constructer will be called.
+ 
+
+public class j6firstclass {
+    public string std= 'maxwell';
+    
+    public j6firstclass(integer inx,boolean feepaid){
+        std = 'finch';
+        system.debug('for inx'+ inx);
+        system.debug('for feepaid'+feepaid);
+ 
+    }
+    public j6firstclass(){
+        system.debug('for empty constructer');
+        
+    }
+    public j6firstclass(string str){
+        system.debug('for str'+ str);
+        
+    }
+ 
+}
+
+in window:
+//j6firstclass de = new j6firstclass('miller');
+//j6firstclass de = new j6firstclass(24,true);
+j6firstclass de = new j6firstclass();
+ 

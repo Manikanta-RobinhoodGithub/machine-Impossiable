@@ -1,0 +1,64 @@
+//how to declare non- primitive datatype variables.
+
+//syntax:for standard and custom objects.
+        //objectapiname variablename = new objectapiname();
+
+account acc = new account();
+contact con = new contact();
+lead ld = new lead();
+
+student__C std = new student__C();
+course__C co = new course__C();
+patient__C pa = new patient__C();
+
+//now i want to pass the data,how?
+//syntax:
+      // objectapiname variablename = new objectapiname();
+      // variablename.fieldapiname ='value';
+account ac  = new account();
+ac.name = 'j5mani1';
+ac.site = 'hyd';
+ac.industry= 'salesforcedeveloper';
+system.debug('afterassign values'+ ac);
+
+student__c st =new student__c();
+st.name='j5mani2';
+st.course__C='a022x000006duxU';
+//st.mobile__C=6302365669; doubt solve in future.
+st.country__C='canada';
+system.debug('after assign values'+ st);
+
+part 2
+
+//method level variable declaration(non-primitive);
+
+public class myj5secondclass {
+    public myj5secondclass(){
+        //1st way
+        account acc = new account();
+        system.debug('before assign values'+ acc);
+        acc.name = 'manoju';
+        acc.site = 'sr nagar';
+        acc.industry = 'salesforce developer';
+        system.debug('after assin values'+ acc);
+        
+        // 2nd way
+        contact co ;
+        co = new contact();
+        co.lastname =' mani contact';
+  
+    }
+
+}
+
+part3
+
+//method level declaration (primitive datatype)
+public class myj5secondclass {
+    public myj5secondclass(){
+         integer  studentcount = 3;
+        integer studentcount1, studentcount2 = 32,studentcount3 = 123;
+        // like this remaining (string,boolean,decimal,date,datetime) also practice, simply all primitive type datatypes.
+    }
+
+}
